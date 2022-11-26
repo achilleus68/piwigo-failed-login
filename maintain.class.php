@@ -25,7 +25,7 @@ if (!defined('PHPWG_ROOT_PATH')) die('Hacking attempt!');
 
 class piwigo_failed_logins_maintain extends PluginMaintain{
   function install($plugin_version, &$errors=array()){
-    pwg_query('INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment) VALUES ("FAILED_LOGINS","","Write failed login attempts into a log file (to be used by fail2ban).");');
+    pwg_query('INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment) VALUES ("failed_logins","","Write failed login attempts into a log file (to be used by fail2ban).");');
   }
 
   function update($old_version, $new_version, &$errors=array())
@@ -34,6 +34,7 @@ class piwigo_failed_logins_maintain extends PluginMaintain{
 
   function uninstall()
   {
-	conf_delete_param('FAILED_LOGINS');
+	    conf_delete_param('failed_logins_logfile');
+	    conf_delete_param('failed_logins');
   }
 }
