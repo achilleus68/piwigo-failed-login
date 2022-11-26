@@ -23,7 +23,7 @@
 
 if (!defined('PHPWG_ROOT_PATH')) die('Hacking attempt!');
 
-class FAILED_LOGINS_maintain extends PluginMaintain{
+class piwigo_failed_logins_maintain extends PluginMaintain{
   function install($plugin_version, &$errors=array()){
     pwg_query('INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment) VALUES ("FAILED_LOGINS","","Write failed login attempts into a log file (to be used by fail2ban).");');
   }

@@ -1,11 +1,11 @@
 <!-- Show the title of the plugin -->
 <div class="titlePage">
- <h2>{'Log Failed Logins plugin'|@translate}</h2>
+ <h2>{'Piwigo Failed Logins plugin'|@translate}</h2>
 </div>
  
 <!-- Show content in a nice box -->
 <fieldset>
-<legend>{'Log Failed Logins plugin'|@translate}</legend>
+<legend>{'Piwigo Failed Logins plugin'|@translate}</legend>
  
 <div align=left>
 <p>This plugin writes all failed login attempts into a text file, one line for one failed attempt. The format of the log looks like this:</p>

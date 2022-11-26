@@ -12,7 +12,7 @@ if (!defined('PHPWG_ROOT_PATH')) die('Hacking attempt!');
 
 define('FAILED_LOGINS_ID',      basename(dirname(__FILE__)));
 define('FAILED_LOGINS_PATH' ,   PHPWG_PLUGINS_PATH . FAILED_LOGINS_ID . '/');
-define('FAILED_LOGINS_ADMIN',get_root_url().'admin.php?page=plugin-'.FAILED_LOGINS_DIR);
+define('FAILED_LOGINS_ADMIN',get_root_url().'admin.php?page=plugin-'.FAILED_LOGINS_ID);
 
 /**
  * this is the core of this plugin:
@@ -51,7 +51,7 @@ function FAILED_LOGINS_admin_menu($menu) {
  array_push(
    $menu,
    array(
-     'NAME'  => 'Log Failed Logins',
+     'NAME'  => 'Piwigo Failed Logins',
      'URL'   => get_admin_plugin_menu_link(dirname(__FILE__)).'/admin.php'
    )
  );
