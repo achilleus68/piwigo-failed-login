@@ -34,7 +34,7 @@ Create new filter `/etc/fail2ban/filter.d/piwigo.conf` with following content:
 [INCLUDES]
 before = common.conf
 [Definition]
-failregex = ip=<HOST>;
+failregex = ip=<HOST>
 ignoreregex =
 ```
 
