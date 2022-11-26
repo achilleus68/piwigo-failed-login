@@ -12,7 +12,7 @@ This plugin writes all failed login attempts into a text file, one line for each
 ```
 
 ### Installation
-Download the code and place it in a subfolder of the Piwigo plugin directory. The plugin should now be visible in the Piwigo Admin Plugin section.
+Download the code and place it in a subfolder named `piwigo_failed_logins` of the Piwigo plugin directory. The plugin should now be visible in the Piwigo Admin Plugin section.
 
 ### Configuration
 On the settings page of the plugin, add the path to the config file in the form at the botton, and save. Make sure that Piwigo has write access to the file.
