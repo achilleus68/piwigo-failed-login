@@ -5,21 +5,23 @@ Version: 1.0
 Description: Write failed login attempts into a log file (to be used by fail2ban).
 Plugin URI: https://github.com/achilleus68/piwigo-failed-login
 Author: Achilleus
+Has Settings: true
 Credits: based on the plugin by Tomas Sobek https://piwigo.org/ext/extension_view.php?eid=801
 */
 if (!defined('PHPWG_ROOT_PATH')) die('Hacking attempt!');
 
-define('LOG_FAILED_LOGINS_ID',      basename(dirname(__FILE__)));
-define('LOG_FAILED_LOGINS_PATH' ,   PHPWG_PLUGINS_PATH . LOG_FAILED_LOGINS_ID . '/');
+define('FAILED_LOGINS_ID',      basename(dirname(__FILE__)));
+define('FAILED_LOGINS_PATH' ,   PHPWG_PLUGINS_PATH . FAILED_LOGINS_ID . '/');
+define('FAILED_LOGINS_ADMIN',get_root_url().'admin.php?page=plugin-'.FAILED_LOGINS_DIR);
 
 /**
  * this is the core of this plugin:
  * write every failed login attempt out into a logfile
  */
 
-add_event_handler('login_failure', 'log_failed_logins_log');
+add_event_handler('login_failure', 'FAILED_LOGINS_log');
 
-function log_failed_logins_log()
+function FAILED_LOGINS_log()
 {
   global $conf;
 
@@ -42,10 +44,10 @@ function log_failed_logins_log()
 }
 
 // Hook on to an event to show the administration page.
-add_event_handler('get_admin_plugin_menu_links', 'log_failed_logins_admin_menu');
+add_event_handler('get_admin_plugin_menu_links', 'FAILED_LOGINS_admin_menu');
 
 // Add an entry to the 'Plugins' menu.
-function log_failed_logins_admin_menu($menu) {
+function FAILED_LOGINS_admin_menu($menu) {
  array_push(
    $menu,
    array(

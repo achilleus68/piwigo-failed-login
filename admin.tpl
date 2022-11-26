@@ -21,7 +21,7 @@
 <span class="property">
   <label for="log_filename">{'Log filename (including absolute path)'|@translate}</label><br><br>
 </span>
-<input type="text" name="log_filename" id="log_filename" value="{$LOG_FAILED_LOGINS_FILENAME}" size="100" maxlength="100">
+<input type="text" name="log_filename" id="log_filename" value="{$FAILED_LOGINS_FILENAME}" size="100" maxlength="100">
 
 <p>
   <input class="submit" type="submit" name="submitButton" value="{'Submit'|@translate}">

@@ -1,15 +1,15 @@
 <?php
-if (!defined('LOG_FAILED_LOGINS_PATH')) die('Hacking attempt!');
+if (!defined('FAILED_LOGINS_PATH')) die('Hacking attempt!');
 global $template, $conf;
 
 // put configured value onto the form
-$template->assign(array('LOG_FAILED_LOGINS_FILENAME' => $conf['logFailedLoginsFilename'],));
+$template->assign(array('FAILED_LOGINS_FILENAME' => $conf['logFailedLoginsFilename'],));
 
 // did user click Submit?
 if (isset($_POST['submitButton'])) {
   // update configuration value
   conf_update_param('logFailedLoginsFilename', $_POST['log_filename']);
-  $template->assign(array('LOG_FAILED_LOGINS_FILENAME' => $_POST['log_filename'],));
+  $template->assign(array('FAILED_LOGINS_FILENAME' => $_POST['log_filename'],));
   // add message to notification area
   array_push($page['infos'], l10n('Configuration update'));
 }
